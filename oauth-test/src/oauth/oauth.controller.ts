@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, Request } from '@nestjs/common';
 import { OauthService } from './oauth.service';
 
 @Controller('oauth')
@@ -10,5 +10,11 @@ export class OauthController {
     console.log(data);
     const result = this.oauthService.googleSignUp(data);
     return result;
+  }
+
+  @Get('naver')
+  naverProfile(@Request() req) {
+    console.log('aetaest');
+    return this.oauthService.naverProfile(req);
   }
 }

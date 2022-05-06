@@ -6,4 +6,9 @@ export class OauthService {
     console.log(data);
     return;
   }
+
+  async naverProfile(res) {
+    console.log(res);
+    return res;
+  }
 }
